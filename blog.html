@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blogs | HAMS</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- REMIX ICON -->
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root{
+
+      --primary:#00b6c4;
+      --secondary:#008fa1;
+
+      --navy:#0b2533;
+      --dark:#091a2a;
+
+      --accent:#ff6b35;
+
+      --soft:#f4f8fa;
+      --white:#ffffff;
+
+      --text:#243746;
+      --muted:#61707f;
+
+      --border:
+      1px solid rgba(0,0,0,0.08);
+
+      --shadow:
+      0 12px 35px rgba(0,0,0,0.05);
+
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+
+      font-family:'Inter',sans-serif;
+
+      background:var(--soft);
+
+      color:var(--text);
+
+      overflow-x:hidden;
+
+      line-height:1.8;
+
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    ul{
+      list-style:none;
+    }
+
+    .container{
+      width:min(1280px,90%);
+      margin:auto;
+    }
+
+    section{
+      padding:70px 0;
+    }
+
+    .menu-toggle{
+     display:none;
+    }
+    /* ========================================= */
+    /* NAVBAR */
+    /* ========================================= */
+
+    .site-header{
+
+      position:fixed;
+
+      top:0;
+      left:0;
+
+      width:100%;
+
+      z-index:9999;
+
+      background:
+      rgba(255,255,255,0.82);
+
+      backdrop-filter:blur(16px);
+
+      border-bottom:
+      1px solid rgba(255,255,255,0.2);
+
+      box-shadow:
+      0 8px 30px rgba(0,0,0,0.04);
+
+    }
+
+    .navbar{
+
+      position:relative;
+
+      height:90px;
+
+      display:flex;
+      align-items:center;
+
+    }
+
+    .brand{
+
+      display:flex;
+      align-items:center;
+
+      gap:14px;
+
+      z-index:2;
+
+    }
+    .logo-img{
+
+      width:48px;
+      height:48px;
+
+      object-fit:contain;
+
+    }
+
+    .brand-text{
+
+      font-size:28px;
+      font-weight:800;
+
+      color:#02131f;
+
+    }
+
+    .navbar nav{
+
+      position:absolute;
+
+      left:50%;
+      transform:translateX(-50%);
+
+      display:flex;
+      align-items:center;
+
+      gap:34px;
+
+    }
+
+    .navbar nav a{
+
+      position:relative;
+
+      color:#425466;
+
+      font-size:15px;
+      font-weight:500;
+
+      transition:0.3s ease;
+
+    }
+
+    .navbar nav a:hover,
+    .navbar nav a.active{
+
+      color:var(--primary);
+
+    }
+
+    .navbar nav a::after{
+
+      content:'';
+
+      position:absolute;
+
+      left:0;
+      bottom:-8px;
+
+      width:0%;
+      height:2px;
+
+      border-radius:50px;
+
+      background:var(--primary);
+
+      transition:0.35s ease;
+
+    }
+
+    .navbar nav a:hover::after,
+    .navbar nav a.active::after{
+
+      width:100%;
+
+    }
+
+    /* ========================================= */
+    /* HERO */
+    /* ========================================= */
+
+    .blog-hero{
+
+      padding:
+      180px 0 70px;
+
+      background:
+      linear-gradient(
+        180deg,
+        rgba(0,182,196,0.08),
+        rgba(0,182,196,0.03)
+      );
+
+    }
+
+    .hero-inner{
+
+      max-width:900px;
+
+    }
+
+    .hero-tag{
+
+      display:inline-block;
+
+      font-size:12px;
+
+      letter-spacing:2px;
+
+      text-transform:uppercase;
+
+      color:#61707f;
+
+      margin-bottom:18px;
+
+    }
+
+    .blog-hero h1{
+
+      font-size:52px;
+
+      line-height:1.05;
+
+      letter-spacing:-2px;
+
+      margin-bottom:20px;
+
+      color:#02131f;
+
+    }
+
+    .blog-hero p{
+
+      font-size:17px;
+
+      line-height:1.9;
+
+      color:#61707f;
+
+      max-width:760px;
+
+    }
+
+    /* ========================================= */
+    /* BLOG GRID */
+    /* ========================================= */
+
+    .blogs-wrap{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(2,1fr);
+
+      gap:30px;
+
+      margin-top:20px;
+
+    }
+
+    /* ========================================= */
+    /* CARD */
+    /* ========================================= */
+
+    .card{
+
+      background:white;
+
+      border-radius:28px;
+
+      overflow:hidden;
+
+      border:var(--border);
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .card img{
+
+      width:100%;
+      height:340px;
+
+      object-fit:cover;
+
+    }
+
+    .card-body{
+
+      padding:34px;
+
+    }
+
+    .meta{
+
+      display:flex;
+      flex-wrap:wrap;
+
+      gap:10px;
+
+      margin-bottom:18px;
+
+    }
+
+    .chip{
+
+      background:
+      rgba(255,107,53,0.12);
+
+      color:var(--accent);
+
+      padding:
+      8px 14px;
+
+      font-size:12px;
+      font-weight:700;
+
+      border-radius:50px;
+
+      text-transform:uppercase;
+
+    }
+
+    .card h2{
+
+      color:#02131f;
+
+      font-size:32px;
+
+      line-height:1.2;
+
+      letter-spacing:-1px;
+
+      margin-bottom:20px;
+
+    }
+
+    .card h3{
+
+      font-size:20px;
+
+      margin:
+      24px 0 10px;
+
+      color:#0b2533;
+
+      line-height:1.5;
+
+    }
+
+    .card p{
+
+      color:#61707f;
+
+      line-height:1.95;
+
+      font-size:15px;
+
+      margin-bottom:14px;
+
+    }
+
+    .kdot{
+
+      width:8px;
+      height:8px;
+
+      display:inline-block;
+
+      border-radius:50%;
+
+      background:var(--accent);
+
+      margin-right:10px;
+
+    }
+
+    /* ========================================= */
+    /* CONTACT */
+    /* ========================================= */
+
+    .contact-section{
+
+      margin-top:70px;
+
+      background:
+      linear-gradient(
+        180deg,
+        rgba(0,182,196,0.08),
+        rgba(0,182,196,0.03)
+      );
+
+    }
+
+    .contact-grid{
+
+      display:grid;
+      grid-template-columns:
+      0.9fr 1.1fr;
+
+      gap:80px;
+
+    }
+
+    .footer-logo{
+
+      width:140px;
+
+    }
+
+    .contact-brand p{
+
+      margin-top:22px;
+
+      max-width:420px;
+
+      line-height:1.9;
+
+      color:#61707f;
+
+    }
+
+    .socials{
+
+      display:flex;
+
+      margin-top:24px;
+
+    }
+
+    .socials a{
+
+      width:50px;
+      height:50px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:50%;
+
+      background:white;
+
+      color:#02131f;
+
+      font-size:20px;
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .contact-cols{
+
+      display:grid;
+      grid-template-columns:
+      repeat(3,1fr);
+
+      gap:30px;
+
+    }
+
+    .contact-cols h5{
+
+      font-size:20px;
+
+      margin-bottom:18px;
+
+      color:#02131f;
+
+    }
+
+    .contact-cols li{
+
+      margin-bottom:14px;
+
+      color:#61707f;
+
+      line-height:1.8;
+
+      font-size:15px;
+
+    }
+
+    .contact-cols a{
+
+      color:#61707f;
+
+    }
+
+    /* ========================================= */
+    /* FOOTER */
+    /* ========================================= */
+
+    .site-footer{
+
+      background:#02131f;
+
+      padding:24px 0;
+
+      text-align:center;
+
+    }
+
+    .site-footer p{
+
+      color:
+      rgba(255,255,255,0.7);
+
+      font-size:14px;
+
+    }
+
+    /* ========================================= */
+    /* RESPONSIVE */
+    /* ========================================= */
+
+    @media(max-width:1100px){
+
+      .blogs-wrap{
+
+        grid-template-columns:1fr;
+
+      }
+
+      .contact-grid{
+
+        grid-template-columns:1fr;
+
+      }
+
+    }
+
+   @media(max-width:768px){
+
+  .menu-toggle{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:50px;
+    height:50px;
+
+    margin-left:auto;
+
+    cursor:pointer;
+
+    font-size:32px;
+
+    color:#02131f;
+
+    z-index:999999;
+
+  }
+
+  .navbar nav{
+
+    position:fixed;
+
+    top:90px;
+    right:-100%;
+
+    left:auto;
+
+    transform:none;
+
+    width:280px;
+    height:100vh;
+
+    background:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:40px 30px;
+
+    gap:24px;
+
+    transition:0.4s ease;
+
+    box-shadow:
+    -10px 0 40px rgba(0,0,0,0.08);
+
+    z-index:99999;
+
+  }
+
+  .navbar nav.active{
+
+    right:0;
+
+  }
+
+  .navbar nav a{
+
+    font-size:16px;
+
+  }
+
+  .blog-hero{
+
+    padding:
+    160px 0 55px;
+
+  }
+
+  .blog-hero h1{
+
+    font-size:40px;
+
+  }
+
+  .card h2{
+
+    font-size:26px;
+
+  }
+
+  .card-body{
+
+    padding:24px;
+
+  }
+
+  .contact-cols{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ========================================= -->
+<!-- NAVBAR -->
+<!-- ========================================= -->
+
+<header class="site-header">
+
+  <div class="container navbar">
+
+    <!-- LOGO -->
+
+    <a href="index.html" class="brand">
+
+      <img
+        src="images/logo.jpeg"
+        alt="HAMS"
+        class="logo-img"
+      >
+
+      <span class="brand-text">
+        HAMS
+      </span>
+
+    </a>
+
+    <!-- NAV LINKS -->
+
+    <nav id="navLinks">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="team.html">
+        Team
+      </a>
+
+      <a href="careers.html">
+        Careers
+      </a>
+
+      <a
+        href="blogs.html"
+        class="active"
+      >
+        Blogs
+      </a>
+
+      <a href="index.html#feedback">
+        Contact
+      </a>
+
+    </nav>
+
+    <!-- MOBILE TOGGLE -->
+
+    <div
+      class="menu-toggle"
+      id="menuToggle"
+    >
+
+      <i class="ri-menu-3-line"></i>
+
+    </div>
+
+  </div>
+
+</header>
+
+  <!-- ========================================= -->
+  <!-- HERO -->
+  <!-- ========================================= -->
+
+  <section class="blog-hero">
+
+    <div class="container hero-inner">
+
+      <span class="hero-tag">
+        INSIGHTS & STRATEGY
+      </span>
+
+      <h1>
+        Our Latest
+        Blogs & Insights
+      </h1>
+
+      <p>
+        Dive into expert insights on business growth,
+        outsourcing, automation, procurement,
+        financial leadership, and operational excellence.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================= -->
+  <!-- BLOGS -->
+  <!-- ========================================= -->
+
+  <main class="container blogs-wrap">
+
+    <!-- BLOG 1 -->
+
+    <article class="card">
+
+      <img src="images/blog1.png" alt="">
+
+      <div class="card-body">
+
+        <div class="meta">
+
+          <span class="chip">
+            Finance Strategy
+          </span>
+
+          <span class="chip">
+            Leadership
+          </span>
+
+        </div>
+
+        <h2>
+          Do You Need a Virtual CFO?
+          Signs Your Business is Ready
+        </h2>
+
+        <p>
+          In today’s fast-paced business environment,
+          financial leadership is no longer a luxury —
+          it’s a necessity. But for many growing
+          businesses, hiring a full-time CFO
+          can be expensive and unnecessary
+          during early stages.
+        </p>
+
+        <p>
+          A Virtual CFO provides strategic financial
+          leadership on a flexible outsourced basis,
+          giving organizations access to high-level
+          expertise without the overhead of a
+          full-time executive.
+        </p>
+
+        <h3>
+          <span class="kdot"></span>
+          You’re struggling with cash flow visibility
+        </h3>
+
+        <p>
+          If you constantly wonder where your money
+          is going or struggle to forecast upcoming
+          expenses, it’s a strong indicator your
+          business needs stronger financial planning.
+        </p>
+
+        <p>
+          A vCFO introduces forecasting,
+          budgeting, and financial visibility
+          to improve decision-making.
+        </p>
+
+        <h3>
+          <span class="kdot"></span>
+          Growth is creating operational pressure
+        </h3>
+
+        <p>
+          Rapid expansion can overwhelm outdated
+          accounting systems and manual reporting.
+        </p>
+
+        <p>
+          A vCFO creates scalable processes,
+          stronger controls, and governance frameworks.
+        </p>
+
+        <h3>
+          <span class="kdot"></span>
+          You need strategic insight
+        </h3>
+
+        <p>
+          Beyond bookkeeping and tax compliance,
+          businesses need strategic finance support
+          to guide investments, profitability,
+          and growth planning.
+        </p>
+
+        <p>
+          A Virtual CFO turns financial data
+          into actionable business insight.
+        </p>
+
+      </div>
+
+    </article>
+
+    <!-- BLOG 2 -->
+
+    <article class="card">
+
+      <img src="images/blog2.png" alt="">
+
+      <div class="card-body">
+
+        <div class="meta">
+
+          <span class="chip">
+            Procurement
+          </span>
+
+          <span class="chip">
+            Operations
+          </span>
+
+        </div>
+
+        <h2>
+          The Hidden Costs of
+          Manual Procurement
+        </h2>
+
+        <p>
+          Many organizations continue to rely
+          on spreadsheets, email approvals,
+          and disconnected procurement processes.
+        </p>
+
+        <p>
+          While this may appear manageable,
+          manual procurement creates hidden costs
+          that impact operational performance,
+          supplier relationships, and profitability.
+        </p>
+
+        <h3>
+          <span class="kdot"></span>
+          Delayed approvals slow operations
+        </h3>
+
+        <p>
+          Purchase requests often remain stuck
+          in inboxes, causing unnecessary delays
+          across departments and projects.
+        </p>
+
+        <p>
+          Automated workflows improve response times
+          and operational continuity.
+        </p>
+
+        <h3>
+          <span class="kdot"></span>
+          Data entry errors increase costs
+        </h3>
+
+        <p>
+          Manual entries result in duplicate invoices,
+          incorrect supplier information,
+          and payment issues.
+        </p>
+
+        <p>
+          Centralized procurement systems
+          significantly reduce these risks.
+        </p>
+
+        <h3>
+          <span class="kdot"></span>
+          Poor supplier communication
+        </h3>
+
+        <p>
+          Delayed approvals and inconsistent processes
+          negatively impact vendor trust
+          and long-term partnerships.
+        </p>
+
+        <p>
+          Procurement outsourcing creates
+          transparency, accountability,
+          and smoother collaboration.
+        </p>
+
+      </div>
+
+    </article>
+
+    <!-- BLOG 3 -->
+
+    <article class="card">
+
+      <img src="images/blog3.png" alt="">
+
+      <div class="card-body">
+
+        <div class="meta">
+
+          <span class="chip">
+            Automation
+          </span>
+
+          <span class="chip">
+            Business Growth
+          </span>
+
+        </div>
+
+        <h2>
+          Automation That Scales:
+          Unlocking Business Capacity
+        </h2>
+
+        <p>
+          Manual processes consume valuable time,
+          reduce productivity, and create inconsistencies.
+        </p>
+
+        <p>
+          Automation allows organizations
+          to scale efficiently while improving
+          accuracy, speed, and customer experience.
+        </p>
+
+        <h3>
+          <span class="kdot"></span>
+          Reduce repetitive work
+        </h3>
+
+        <p>
+          Automation eliminates repetitive tasks
+          across HR, finance, procurement,
+          and customer support.
+        </p>
+
+        <p>
+          Teams can focus on higher-value work
+          instead of operational bottlenecks.
+        </p>
+
+        <h3>
+          <span class="kdot"></span>
+          Improve operational visibility
+        </h3>
+
+        <p>
+          Dashboards and real-time analytics
+          help leaders track performance instantly.
+        </p>
+
+        <p>
+          Better visibility leads to faster
+          and more informed decisions.
+        </p>
+
+        <h3>
+          <span class="kdot"></span>
+          Increase scalability
+        </h3>
+
+        <p>
+          Automated workflows grow with the business,
+          allowing companies to handle more volume
+          without significantly increasing overhead.
+        </p>
+
+      </div>
+
+    </article>
+
+    <!-- BLOG 4 -->
+
+    <article class="card">
+
+      <img src="images/blog4.png" alt="">
+
+      <div class="card-body">
+
+        <div class="meta">
+
+          <span class="chip">
+            Analytics
+          </span>
+
+          <span class="chip">
+            Decision Making
+          </span>
+
+        </div>
+
+        <h2>
+          Data-Driven Decisions:
+          Turning Operations Into Insight
+        </h2>
+
+        <p>
+          Modern businesses generate massive
+          amounts of data every day,
+          but data alone is not enough.
+        </p>
+
+        <p>
+          The real advantage comes from turning
+          information into actionable insight.
+        </p>
+
+        <h3>
+          <span class="kdot"></span>
+          Real-time business visibility
+        </h3>
+
+        <p>
+          Advanced dashboards provide
+          instant insight into operational
+          performance and financial trends.
+        </p>
+
+        <p>
+          Leaders can identify issues
+          before they become major problems.
+        </p>
+
+        <h3>
+          <span class="kdot"></span>
+          Smarter forecasting
+        </h3>
+
+        <p>
+          Predictive analytics help businesses
+          plan resources, cash flow,
+          and growth opportunities more effectively.
+        </p>
+
+        <h3>
+          <span class="kdot"></span>
+          Better strategic decisions
+        </h3>
+
+        <p>
+          Data-driven organizations respond faster,
+          operate more efficiently,
+          and maintain stronger competitive advantages.
+        </p>
+
+        <p>
+          At HAMS, we help organizations
+          build analytics ecosystems
+          that transform raw data into
+          measurable business value.
+        </p>
+
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- ========================================= -->
+  <!-- CONTACT -->
+  <!-- ========================================= -->
+
+  <section
+    id="contact"
+    class="contact-section"
+  >
+
+    <div class="container contact-grid">
+
+      <div class="contact-brand">
+
+        <img
+          src="images/logo.jpeg"
+          alt="HAMS"
+          class="footer-logo"
+        >
+
+        <p>
+          Helping businesses work smarter
+          through automation, outsourcing,
+          finance, and digital transformation.
+        </p>
+
+        <div class="socials">
+
+          <a href="#">
+
+            <i class="ri-linkedin-fill"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="contact-cols">
+
+        <div>
+
+          <h5>
+            Quick Links
+          </h5>
+
+          <ul>
+
+            <li>
+              <a href="index.html">
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="services.html">
+                Services
+              </a>
+            </li>
+
+            <li>
+              <a href="team.html">
+                Team
+              </a>
+            </li>
+
+            <li>
+              <a href="careers.html">
+                Careers
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div>
+
+          <h5>
+            Services
+          </h5>
+
+          <ul>
+
+            <li>
+              Accounting & Bookkeeping
+            </li>
+
+            <li>
+              Virtual CFO Services
+            </li>
+
+            <li>
+              Procurement Solutions
+            </li>
+
+            <li>
+              Data & Analytics
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div>
+
+          <h5>
+            Contact
+          </h5>
+
+          <ul>
+
+            <li>
+              info@haraik.com
+            </li>
+
+            <li>
+              Islamabad, Pakistan
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================= -->
+
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <p>
+        © 2025 HAMS.
+        All Rights Reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+<script>
+
+const menuToggle =
+document.getElementById("menuToggle");
+
+const navLinks =
+document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+
+  navLinks.classList.toggle("active");
+
+});
+
+document
+.querySelectorAll("#navLinks a")
+.forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    navLinks.classList.remove("active");
+
+  });
+
+});
+
+</script>
+
+</body>
+
+</html>

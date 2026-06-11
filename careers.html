@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Careers | HAMS
+  </title>
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- REMIX ICONS -->
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* ========================================= */
+    /* ROOT */
+    /* ========================================= */
+
+    :root{
+
+      --primary:#00b6c4;
+      --secondary:#008fa1;
+
+      --navy:#0b2533;
+      --dark:#091a2a;
+
+      --accent:#ff6b35;
+
+      --white:#ffffff;
+      --soft:#f4f8fa;
+
+      --text:#243746;
+      --muted:#61707f;
+
+      --border:
+      1px solid rgba(0,0,0,0.08);
+
+      --shadow:
+      0 10px 35px rgba(0,0,0,0.05);
+
+    }
+
+    /* ========================================= */
+    /* GLOBAL */
+    /* ========================================= */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+
+      font-family:'Inter',sans-serif;
+
+      background:var(--soft);
+
+      color:var(--text);
+
+      overflow-x:hidden;
+
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    ul{
+      list-style:none;
+    }
+
+    .container{
+
+      width:min(1320px,90%);
+      margin:auto;
+
+    }
+
+    section{
+
+      padding:120px 0;
+      position:relative;
+
+    }
+
+    section::before{
+
+      content:'';
+
+      position:absolute;
+      inset:0;
+
+      background:
+      linear-gradient(
+        180deg,
+        rgba(0,182,196,0.03),
+        transparent
+      );
+
+      pointer-events:none;
+
+    }
+
+    /* ========================================= */
+    /* NAVBAR */
+    /* ========================================= */
+
+    header{
+
+      position:fixed;
+      top:0;
+      left:0;
+
+      width:100%;
+
+      z-index:1000;
+
+      background:
+      rgba(255,255,255,0.92);
+
+      backdrop-filter:blur(14px);
+
+      border-bottom:
+      1px solid rgba(0,0,0,0.05);
+
+    }
+
+    .navbar{
+
+      position:relative;
+
+      height:90px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+    }
+
+    /* LOGO */
+
+    .logo{
+
+      display:flex;
+      align-items:center;
+      gap:14px;
+
+      z-index:1001;
+
+    }
+
+    .logo-img{
+
+      width:48px;
+      height:48px;
+
+      object-fit:contain;
+
+    }
+
+    .logo-text{
+
+      font-size:28px;
+      font-weight:800;
+
+      color:#02131f;
+
+    }
+
+    /* NAV LINKS */
+
+    .nav-links{
+
+      position:absolute;
+
+      left:50%;
+      transform:translateX(-50%);
+
+      display:flex;
+      align-items:center;
+      gap:34px;
+
+    }
+
+    .nav-links a{
+
+      position:relative;
+
+      color:#425466;
+
+      font-size:15px;
+      font-weight:500;
+
+      transition:0.3s ease;
+
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+
+      color:var(--primary);
+
+    }
+
+    .nav-links a::after{
+
+      content:'';
+
+      position:absolute;
+
+      left:0;
+      bottom:-8px;
+
+      width:0%;
+      height:2px;
+
+      background:var(--primary);
+
+      transition:0.35s ease;
+
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after{
+
+      width:100%;
+
+    }
+
+    /* MOBILE TOGGLE */
+
+    .menu-toggle{
+
+      display:none;
+
+      width:50px;
+      height:50px;
+
+      align-items:center;
+      justify-content:center;
+
+      font-size:32px;
+
+      cursor:pointer;
+
+      color:#02131f;
+
+      z-index:1001;
+
+    }
+
+    /* ========================================= */
+    /* HERO */
+    /* ========================================= */
+
+    .careers-hero{
+
+      padding:
+      190px 0 120px;
+
+      background:
+      linear-gradient(
+        180deg,
+        rgba(0,182,196,0.08),
+        rgba(0,182,196,0.03)
+      );
+
+    }
+
+    .careers-hero .container{
+
+      max-width:1200px;
+
+    }
+
+    .hero-tag{
+
+      font-size:13px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+
+      color:#61707f;
+
+      margin-bottom:24px;
+
+      display:inline-block;
+
+    }
+
+    .careers-hero h1{
+
+      font-size:72px;
+
+      line-height:0.95;
+
+      letter-spacing:-4px;
+
+      max-width:850px;
+
+      color:#02131f;
+
+      margin-bottom:28px;
+
+      font-weight:800;
+
+    }
+
+    .careers-hero .accent{
+
+      color:var(--accent);
+
+    }
+
+    .careers-hero p{
+
+      max-width:720px;
+
+      font-size:20px;
+
+      line-height:1.9;
+
+      color:#61707f;
+
+    }
+
+    /* ========================================= */
+    /* CAREERS */
+    /* ========================================= */
+
+    .careers-wrapper{
+
+      max-width:1320px;
+
+      margin:auto;
+
+      padding:
+      120px 5%;
+
+    }
+
+    .section-tag{
+
+      font-size:13px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+
+      color:var(--primary);
+
+      margin-bottom:20px;
+
+      display:inline-block;
+
+    }
+
+    .section-heading{
+
+      margin-bottom:70px;
+
+    }
+
+    .section-heading h2{
+
+      font-size:58px;
+
+      line-height:1;
+
+      letter-spacing:-3px;
+
+      color:#02131f;
+
+      margin-bottom:20px;
+
+    }
+
+    .section-heading p{
+
+      max-width:700px;
+
+      line-height:1.9;
+
+      color:#61707f;
+
+      font-size:18px;
+
+    }
+
+    /* GRID */
+
+    .career-grid{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(2,1fr);
+
+      gap:34px;
+
+    }
+
+    /* CARD */
+
+    .career-card{
+
+      background:white;
+
+      border-radius:24px;
+
+      padding:42px;
+
+      border:var(--border);
+
+      transition:0.35s ease;
+
+    }
+
+    .career-card:hover{
+
+      transform:translateY(-6px);
+
+      box-shadow:
+      0 18px 40px rgba(0,0,0,0.05);
+
+    }
+
+    .career-card h3{
+
+      font-size:34px;
+
+      line-height:1.15;
+
+      letter-spacing:-1px;
+
+      margin-bottom:18px;
+
+      color:#1f3344;
+
+    }
+
+    .career-card p{
+
+      font-size:17px;
+
+      line-height:1.9;
+
+      color:#61707f;
+
+      margin-bottom:28px;
+
+    }
+
+    /* BUTTON */
+
+    .apply-btn{
+
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      height:52px;
+
+      padding:0 24px;
+
+      border-radius:8px;
+
+      background:var(--accent);
+
+      color:white;
+
+      font-size:14px;
+      font-weight:600;
+
+      transition:0.35s ease;
+
+    }
+
+    .apply-btn:hover{
+
+      transform:translateY(-4px);
+
+    }
+
+    /* ========================================= */
+    /* BENEFITS */
+    /* ========================================= */
+
+    .benefits-section{
+
+      background:white;
+
+    }
+
+    .benefits-grid{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(4,1fr);
+
+      gap:26px;
+
+    }
+
+    .benefit-card{
+
+      background:white;
+
+      padding:40px;
+
+      border-radius:20px;
+
+      border:var(--border);
+
+    }
+
+    .benefit-card i{
+
+      font-size:34px;
+
+      color:var(--primary);
+
+      margin-bottom:24px;
+
+    }
+
+    .benefit-card h3{
+
+      font-size:26px;
+
+      margin-bottom:14px;
+
+    }
+
+    .benefit-card p{
+
+      line-height:1.8;
+
+      color:#61707f;
+
+    }
+
+    /* ========================================= */
+    /* CONTACT */
+    /* ========================================= */
+
+    .contact-section{
+
+      background:
+      linear-gradient(
+        180deg,
+        rgba(0,182,196,0.08),
+        rgba(0,182,196,0.03)
+      );
+
+    }
+
+    .contact-grid{
+
+      display:grid;
+
+      grid-template-columns:
+      0.9fr 1.1fr;
+
+      gap:100px;
+
+      align-items:center;
+
+    }
+
+    .contact-left h2{
+
+      font-size:64px;
+
+      line-height:0.95;
+
+      letter-spacing:-3px;
+
+      margin-bottom:28px;
+
+      color:#02131f;
+
+    }
+
+    .contact-left p{
+
+      line-height:1.9;
+
+      color:#61707f;
+
+      margin-bottom:40px;
+
+      max-width:520px;
+
+    }
+
+    .contact-info h4{
+
+      color:var(--accent);
+
+      margin-bottom:14px;
+
+    }
+
+    .contact-info p{
+
+      margin-bottom:10px;
+
+    }
+
+    /* FORM */
+
+    .contact-form{
+
+      background:white;
+
+      padding:50px;
+
+      border-radius:24px;
+
+      border:var(--border);
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .form-grid{
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      gap:18px;
+
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+
+      width:100%;
+
+      border:var(--border);
+
+      height:58px;
+
+      padding:0 18px;
+
+      outline:none;
+
+      font-family:'Inter',sans-serif;
+
+      margin-bottom:20px;
+
+    }
+
+    .contact-form textarea{
+
+      height:150px;
+
+      padding-top:18px;
+
+      resize:none;
+
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus{
+
+      border-color:var(--primary);
+
+    }
+
+    .contact-form button{
+
+      width:100%;
+
+      border:none;
+
+    }
+
+    /* ========================================= */
+    /* FOOTER */
+    /* ========================================= */
+
+    .footer{
+
+      background:#f4f8fa;
+
+      color:black;
+
+      padding-top:100px;
+
+    }
+
+    .footer-wrapper{
+
+      display:grid;
+
+      grid-template-columns:
+      1.5fr 1fr 1fr 1fr;
+
+      gap:70px;
+
+    }
+
+    .footer-logo{
+
+  width:120px;
+
+  margin-bottom:20px;
+
+  object-fit:contain;
+
+}
+
+    .footer h3{
+
+      font-size:34px;
+
+      margin-bottom:22px;
+
+    }
+
+    .footer h4{
+
+      margin-bottom:22px;
+
+    }
+
+    .footer p,
+    .footer a{
+
+      color:
+      rgba(19, 35, 51, 0.808);
+
+      line-height:1.9;
+
+    }
+
+    .footer a{
+
+      display:block;
+
+      margin-bottom:14px;
+
+    }
+
+    .footer a:hover{
+
+      color:var(--primary);
+
+    }
+
+    .social-icons{
+
+      display:flex;
+
+      gap:14px;
+
+      margin-top:30px;
+
+    }
+
+    .social-icons a{
+
+      width:52px;
+      height:52px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:50%;
+
+      background:
+      rgba(255,255,255,0.08);
+
+      color:white;
+
+      font-size:20px;
+
+    }
+
+    .footer-bottom{
+
+      margin-top:80px;
+
+      padding:30px 0;
+
+      border-top:
+      1px solid rgba(22, 33, 63, 0.726);
+      background:#02131f; 
+
+      text-align:center;
+
+    }
+    .footer-bottom p {
+        color:#ffffff;
+
+    }
+
+    /* ========================================= */
+    /* RESPONSIVE */
+    /* ========================================= */
+
+    @media(max-width:1100px){
+
+      .career-grid,
+      .benefits-grid{
+
+        grid-template-columns:1fr 1fr;
+
+      }
+
+      .contact-grid{
+
+        grid-template-columns:1fr;
+
+      }
+
+    }
+
+    /* ========================================= */
+    /* MOBILE */
+    /* ========================================= */
+
+    @media(max-width:768px){
+
+      .menu-toggle{
+
+        display:flex;
+
+      }
+
+      .nav-links{
+
+        position:fixed;
+
+        top:90px;
+        right:-100%;
+
+        left:auto;
+
+        transform:none;
+
+        width:280px;
+        height:100vh;
+
+        background:white;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        padding:40px 30px;
+
+        gap:24px;
+
+        transition:0.4s ease;
+
+        box-shadow:
+        -10px 0 40px rgba(0,0,0,0.08);
+
+        z-index:999;
+
+      }
+
+      .nav-links.active{
+
+        right:0;
+
+      }
+
+      .nav-links a{
+
+        font-size:16px;
+
+      }
+
+      .careers-hero h1,
+      .contact-left h2,
+      .section-heading h2{
+
+        font-size:42px;
+
+        letter-spacing:-2px;
+
+      }
+
+      .career-grid,
+      .benefits-grid,
+      .footer-wrapper,
+      .form-grid{
+
+        grid-template-columns:1fr;
+
+      }
+
+      .contact-form{
+
+        padding:32px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <body>
+
+  <!-- ========================================= -->
+  <!-- NAVBAR -->
+  <!-- ========================================= -->
+
+  <header>
+
+    <div class="container navbar">
+
+      <!-- LOGO -->
+
+      <a href="index.html" class="logo">
+
+        <img
+          src="images/logo.jpeg"
+          alt="HAMS"
+          class="logo-img"
+        >
+
+        <span class="logo-text">
+          HAMS
+        </span>
+
+      </a>
+
+      <!-- NAV LINKS -->
+
+      <div
+        class="nav-links"
+        id="navLinks"
+      >
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+        <a href="team.html">
+          Team
+        </a>
+
+        <a
+          href="careers.html"
+          class="active"
+        >
+          Careers
+        </a>
+
+        <a href="blog.html">
+          Blogs
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </div>
+
+      <!-- MOBILE TOGGLE -->
+
+      <div
+        class="menu-toggle"
+        id="menuToggle"
+      >
+
+        <i class="ri-menu-3-line"></i>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- ========================================= -->
+  <!-- HERO -->
+  <!-- ========================================= -->
+
+  <section class="careers-hero">
+
+    <div class="container">
+
+      <span class="hero-tag">
+        CAREERS AT HAMS
+      </span>
+
+      <h1>
+        Build Your Career
+        With <span class="accent">Purpose</span>
+      </h1>
+
+      <p>
+        Join a fast-growing company focused
+        on innovation, automation, finance,
+        and transforming how businesses operate.
+        At HAMS, your ideas matter and your
+        growth is our priority.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================= -->
+  <!-- OPEN POSITIONS -->
+  <!-- ========================================= -->
+
+  <section class="careers-wrapper">
+
+    <div class="section-heading">
+
+      <span class="section-tag">
+        OPEN POSITIONS
+      </span>
+
+      <h2>
+        Explore Career Opportunities
+      </h2>
+
+      <p>
+        Discover exciting opportunities to grow,
+        innovate, and contribute to impactful
+        business transformation projects.
+      </p>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="career-grid">
+
+      <!-- CARD 1 -->
+
+      <div class="career-card">
+
+        <h3>
+          Accounts & Bookkeeping Specialist
+        </h3>
+
+        <p>
+          Maintain ledgers, reconcile statements,
+          and support financial reporting
+          for global clients and modern businesses.
+        </p>
+
+        <a
+          href="mailto:careers@hams.com"
+          class="apply-btn"
+        >
+          Apply Now
+        </a>
+
+      </div>
+
+      <!-- CARD 2 -->
+
+      <div class="career-card">
+
+        <h3>
+          HR Executive
+        </h3>
+
+        <p>
+          Manage recruitment, onboarding,
+          payroll operations, and employee
+          engagement initiatives.
+        </p>
+
+        <a
+          href="mailto:careers@hams.com"
+          class="apply-btn"
+        >
+          Apply Now
+        </a>
+
+      </div>
+
+      <!-- CARD 3 -->
+
+      <div class="career-card">
+
+        <h3>
+          Procurement Officer
+        </h3>
+
+        <p>
+          Oversee vendor relationships,
+          purchasing cycles, and procurement
+          workflows for operational efficiency.
+        </p>
+
+        <a
+          href="mailto:careers@hams.com"
+          class="apply-btn"
+        >
+          Apply Now
+        </a>
+
+      </div>
+
+      <!-- CARD 4 -->
+
+      <div class="career-card">
+
+        <h3>
+          Data & Analytics Associate
+        </h3>
+
+        <p>
+          Build dashboards, analyze data,
+          and provide actionable insights
+          for smarter business decisions.
+        </p>
+
+        <a
+          href="mailto:careers@hams.com"
+          class="apply-btn"
+        >
+          Apply Now
+        </a>
+
+      </div>
+
+      <!-- CARD 5 -->
+
+      <div class="career-card">
+
+        <h3>
+          BPO Operations Associate
+        </h3>
+
+        <p>
+          Support clients with customer service,
+          backend operations, and workflow
+          optimization solutions.
+        </p>
+
+        <a
+          href="mailto:careers@hams.com"
+          class="apply-btn"
+        >
+          Apply Now
+        </a>
+
+      </div>
+
+      <!-- CARD 6 -->
+
+      <div class="career-card">
+
+        <h3>
+          Automation & Workflow Engineer
+        </h3>
+
+        <p>
+          Design automated systems and
+          optimize operational workflows
+          using modern digital tools.
+        </p>
+
+        <a
+          href="mailto:careers@hams.com"
+          class="apply-btn"
+        >
+          Apply Now
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================= -->
+  <!-- BENEFITS -->
+  <!-- ========================================= -->
+
+  <section class="benefits-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-tag">
+          WHY JOIN HAMS
+        </span>
+
+        <h2>
+          Benefits & Growth
+        </h2>
+
+      </div>
+
+      <div class="benefits-grid">
+
+        <div class="benefit-card">
+
+          <i class="ri-lightbulb-line"></i>
+
+          <h3>
+            Innovation First
+          </h3>
+
+          <p>
+            Work on modern projects
+            that shape business transformation.
+          </p>
+
+        </div>
+
+        <div class="benefit-card">
+
+          <i class="ri-arrow-up-circle-line"></i>
+
+          <h3>
+            Career Growth
+          </h3>
+
+          <p>
+            Learn continuously and grow
+            within a collaborative environment.
+          </p>
+
+        </div>
+
+        <div class="benefit-card">
+
+          <i class="ri-team-line"></i>
+
+          <h3>
+            Great Culture
+          </h3>
+
+          <p>
+            Join a supportive team focused
+            on collaboration and innovation.
+          </p>
+
+        </div>
+
+        <div class="benefit-card">
+
+          <i class="ri-medal-line"></i>
+
+          <h3>
+            Competitive Benefits
+          </h3>
+
+          <p>
+            Enjoy rewarding opportunities
+            and a healthy work environment.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================= -->
+  <!-- CONTACT -->
+  <!-- ========================================= -->
+
+  <section
+    class="contact-section"
+    id="contact"
+  >
+
+    <div class="container contact-grid">
+
+      <!-- LEFT -->
+
+      <div class="contact-left">
+
+        <span class="section-tag">
+          CONTACT US
+        </span>
+
+        <h2>
+          Let’s Build
+          Your Future Together
+        </h2>
+
+        <p>
+          Interested in joining HAMS?
+          Reach out to our recruitment team
+          and explore exciting career opportunities.
+        </p>
+
+        <div class="contact-info">
+
+          <h4>
+            info@haraik.com
+          </h4>
+
+          <p>
+            +92 51 5561234
+          </p>
+
+          <p>
+            House 9-A, Street 30, F-8/1<br>
+            Islamabad, Pakistan
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- FORM -->
+
+      <form class="contact-form">
+
+        <div class="form-grid">
+
+          <input
+            type="text"
+            placeholder="First Name"
+          >
+
+          <input
+            type="text"
+            placeholder="Last Name"
+          >
+
+        </div>
+
+        <input
+          type="email"
+          placeholder="Business Email"
+        >
+
+        <input
+          type="text"
+          placeholder="Position Interested In"
+        >
+
+        <textarea
+          placeholder="Tell us about yourself..."
+        ></textarea>
+
+        <button class="apply-btn">
+          Submit Application
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================= -->
+
+  <footer class="footer">
+
+    <div class="container footer-wrapper">
+
+      <!-- COL 1 -->
+
+      <div>
+        <img
+            src="images/logo.jpeg"
+            alt="HAMS"
+            class="footer-logo">
+        <h3>
+          HAMS
+        </h3>
+
+        <p>
+          Helping businesses work smarter
+          through automation, outsourcing,
+          and digital transformation.
+        </p>
+
+        <div class="social-icons">
+
+          <a
+            href="https://www.linkedin.com/company/haraik/"
+            target="_blank"
+          >
+
+            <i class="ri-linkedin-fill"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- COL 2 -->
+
+      <div>
+
+        <h4>
+          Quick Links
+        </h4>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+        <a href="blog.html">
+          Blogs
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
+
+      </div>
+
+      <!-- COL 3 -->
+
+      <div>
+
+        <h4>
+          Services
+        </h4>
+
+        <a href="#">
+          Virtual CFO
+        </a>
+
+        <a href="#">
+          Automation
+        </a>
+
+        <a href="#">
+          Analytics
+        </a>
+
+        <a href="#">
+          Procurement
+        </a>
+
+      </div>
+
+      <!-- COL 4 -->
+
+      <div class="footer-col">
+
+        <h4>
+          Contact
+        </h4>
+
+        <p>
+          House 9-A, Street 30, F-8/1<br>
+          Islamabad, Pakistan
+        </p>
+
+        <p>
+          info@haraik.com
+        </p>
+
+        <p>
+          +92 321 8503 540
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2025 HAMS.
+        All Rights Reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    const menuToggle =
+    document.getElementById("menuToggle");
+
+    const navLinks =
+    document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+
+      navLinks.classList.toggle("active");
+
+    });
+
+    document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
