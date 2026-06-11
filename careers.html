@@ -1364,41 +1364,67 @@
 
       <!-- FORM -->
 
-      <form class="contact-form">
-
-        <div class="form-grid">
-
-          <input
-            type="text"
-            placeholder="First Name"
+      <form
+            class="contact-form"
+            action="https://formsubmit.co/info@haraik.com"
+            method="POST"
           >
 
-          <input
-            type="text"
-            placeholder="Last Name"
-          >
+            <!-- Disable captcha -->
+            <input type="hidden" name="_captcha" value="false">
 
-        </div>
+            <!-- Email subject -->
+            <input type="hidden" name="_subject" value="New Career Application - HAMS">
 
-        <input
-          type="email"
-          placeholder="Business Email"
-        >
+            <!-- Redirect after submit -->
+            <input type="hidden" name="_next" value="https://hams-pk.com">
 
-        <input
-          type="text"
-          placeholder="Position Interested In"
-        >
+            <div class="form-grid">
 
-        <textarea
-          placeholder="Tell us about yourself..."
-        ></textarea>
+              <input
+                type="text"
+                name="first_name"
+                placeholder="First Name"
+                required
+              >
 
-        <button class="apply-btn">
-          Submit Application
-        </button>
+              <input
+                type="text"
+                name="last_name"
+                placeholder="Last Name"
+                required
+              >
 
-      </form>
+            </div>
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Business Email"
+              required
+            >
+
+            <input
+              type="text"
+              name="position"
+              placeholder="Position Interested In"
+              required
+            >
+
+            <textarea
+              name="message"
+              placeholder="Tell us about yourself..."
+              required
+            ></textarea>
+
+            <button
+              type="submit"
+              class="apply-btn"
+            >
+              Submit Application
+            </button>
+
+        </form>
 
     </div>
 
